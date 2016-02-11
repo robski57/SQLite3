@@ -1,0 +1,14 @@
+import sqlite3
+conn = sqlite3.connect("CJ.db")
+curs = conn.cursor()
+#curs.execute(" CREATE TABLE records(C_J_R_H VARCHAR(20) PRIMARY KEY, country STR, NoC FLOAT)")
+ #My table name is records, and the colume names are C_J_R_H, country, Number of Catches(NoC)
+
+curs.execute('INSERT INTO records VALUES("Ian Stewart", "Canada", 94)')
+curs.execute('INSERT INTO records VALUES("Aaron Gregg", "Canada", 88)')
+curs.execute('INSERT INTO records VALUES("Chad Taylor", "USA", 78)')
+
+
+curs.execute('SELECT * FROM records')
+rows = curs.fethcall()
+print(rows)
